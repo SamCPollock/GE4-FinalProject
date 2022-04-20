@@ -20,6 +20,7 @@ public class ZombieDeadState : ZombieStates
 
         ownerZombie.zombieAnimator.SetFloat(movementZHash, 0);
         ownerZombie.zombieAnimator.SetBool(isDeadHash, true);
+
     }
 
     public override void Exit()
@@ -28,5 +29,9 @@ public class ZombieDeadState : ZombieStates
         ownerZombie.zombieNavMeshAgent.isStopped = false;
         ownerZombie.zombieAnimator.SetBool(isDeadHash, false);
 
+    }
+
+    public void DestroySelf()
+    {
     }
 }

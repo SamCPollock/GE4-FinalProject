@@ -13,7 +13,13 @@ public class ZombieHealthComponent : HealthComponent
 
     public override void Destroy()
     {
+        Invoke("DestroySelf", 3);
         zombieStateMachine.ChangeState(ZombieStateType.Dead);
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 
 }

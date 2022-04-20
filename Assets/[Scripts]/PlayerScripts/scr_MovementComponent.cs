@@ -55,6 +55,8 @@ public class scr_MovementComponent : MonoBehaviour
             AppEvents.InvokeMouseCursorEnable(false);
         }
 
+        Cursor.lockState = CursorLockMode.Locked; 
+
     }
 
     private void Update()
