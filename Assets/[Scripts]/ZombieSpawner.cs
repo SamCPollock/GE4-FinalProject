@@ -12,12 +12,13 @@ public class ZombieSpawner : MonoBehaviour
     public TextMeshProUGUI waveUIText;
     public TextMeshProUGUI zombiesRemainingText;
     public GameObject zombiesParent;
+    public SceneChanger sceneManager; 
 
     public float timeBetweenWaves;
     private float timeSinceLastWave;
     private int zombiesRemaining;
 
-    private int wave = 1;
+    public int wave = 1;
     public int maxWave = 10;
 
 
@@ -34,7 +35,7 @@ public class ZombieSpawner : MonoBehaviour
     }
 
   
-    void SpawnWave()
+    public void SpawnWave()
     {
         waveUIText.text = wave.ToString();
 
@@ -65,6 +66,7 @@ public class ZombieSpawner : MonoBehaviour
             {
                 wave = maxWave;
                 // ***********YOU WIN************
+                sceneManager.ChangeScene(4);
             }
             SpawnWave();
             timeSinceLastWave = 0;

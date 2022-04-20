@@ -27,6 +27,7 @@ public class scr_MovementComponent : MonoBehaviour
     Vector2 inputVector = Vector2.zero;
     Vector3 moveDirection = Vector3.zero;
     public GameObject followTarget;
+    public SaveSystem saveSystem;
 
 
     Vector2 lookInput = Vector2.zero;
@@ -151,6 +152,16 @@ public class scr_MovementComponent : MonoBehaviour
         // if we aim up/down, adjust animations to have a mask to properly animate aim. 
     }
 
+    public void OnSave(InputValue value)
+    {
+        saveSystem.SaveGame();
+    }
+
+    public void OnLoad(InputValue value)
+    {
+        saveSystem.LoadGame();
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

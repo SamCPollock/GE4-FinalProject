@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthComponent : MonoBehaviour, IDamageable
 {
     [SerializeField]
-    private float currentHealth;
+    public  float currentHealth;
     public float CurrentHealth => currentHealth;
 
     [SerializeField]
